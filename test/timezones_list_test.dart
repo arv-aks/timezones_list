@@ -4,15 +4,43 @@ import 'package:timezones_list/timezones_list.dart';
 
 void main() {
   group('TimezonesList', () {
-    test('getTimezonesList should return a list of TimezoneModel', () {
-      // Arrange
-      final timezonesList = TimezonesList();
+    group('TimezonesList', () {
+      test('getTimezonesList returns a list of TimezoneModel', () {
+        final timezonesList = TimezonesList();
+        final list = timezonesList.getTimezonesList();
 
-      // Act
-      final List<TimezoneModel> result = timezonesList.getTimezonesList();
+        expect(
+            list,
+            isA<
+                List<
+                    TimezoneModel>>()); // Check if the result is a list of TimezoneModel
+        expect(list, isNotEmpty); // Check if the list is not empty
+      });
 
-      // Assert
-      expect(result, isA<List<TimezoneModel>>());
+      test('TimezoneModel.fromJson creates a valid instance', () {
+        final json = {
+          "value": "UTC-11",
+          "abbr": "U",
+          "offset": -11,
+          "isdst": false,
+          "text": "(UTC-11:00) Coordinated Universal Time-11",
+          "utc": [
+            "Etc/GMT+11",
+            "Pacific/Midway",
+            "Pacific/Niue",
+            "Pacific/Pago_Pago"
+          ]
+        };
+
+        final timezoneModel = TimezoneModel.fromJson(json);
+
+        expect(timezoneModel,
+            isA<TimezoneModel>()); // Check if it's a valid TimezoneModel instance
+        expect(timezoneModel.value, "UTC-11");
+        expect(timezoneModel.abbr, "U");
+        expect(timezoneModel.offset, -11);
+        // Add more assertions to check other properties
+      });
     });
 
     test('getTimezonesList should return a valid list of TimezoneModel', () {
