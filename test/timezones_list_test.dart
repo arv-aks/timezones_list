@@ -1,4 +1,3 @@
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:timezones_list/timezone_model.dart';
 import 'package:timezones_list/timezones_list.dart';

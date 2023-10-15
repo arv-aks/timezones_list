@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-List<TimezoneModel> timezonesFromJson(String str) =>
-    List<TimezoneModel>.from(json.decode(str).map((x) => TimezoneModel.fromJson(x)));
+List<TimezoneModel> timezonesFromJson(String str) => List<TimezoneModel>.from(
+    json.decode(str).map((x) => TimezoneModel.fromJson(x)));
 
 String timezonesToJson(List<TimezoneModel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
@@ -60,4 +60,3 @@ class TimezoneModel {
         "utc": utc == null ? [] : List<dynamic>.from(utc!.map((x) => x)),
       };
 }
-

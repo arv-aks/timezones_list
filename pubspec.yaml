@@ -1,7 +1,7 @@
 name: timezones_list
 description: A comprehensive collection of UTC timezones, providing accurate and up-to-date information to help you manage time-related tasks and timezone conversions in your Dart application.
-version: 0.0.4
-homepage: https://gitlab.com/acer1/timezone_list
+version: 0.0.5
+homepage: https://gitlab.com/acer1/timezones_list
 
 environment:
   sdk: '>=3.0.5 <4.0.0'
